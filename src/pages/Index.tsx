@@ -629,8 +629,8 @@ export default function Index() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="section-reveal space-y-4">
               {[
-                { icon: "MapPin", label: "АДРЕС", value: "Воронеж", sub: "Уточните адрес при записи" },
-                { icon: "Phone", label: "ТЕЛЕФОН", value: "Уточнить при записи", sub: "Ответим за 30 минут" },
+                { icon: "MapPin", label: "АДРЕС", value: "ул. Митрофановская, 2", sub: "г. Воронеж" },
+                { icon: "Phone", label: "ТЕЛЕФОН", value: "+7 (950) 753-83-53", sub: "Ответим за 30 минут" },
                 { icon: "Clock", label: "РЕЖИМ РАБОТЫ", value: "Пн–Вс: 9:00 – 21:00", sub: "Без выходных" },
                 { icon: "Star", label: "МЫ НА AVITO", value: "APT studio", sub: "97 отзывов · Рейтинг 5.0★" },
               ].map((c, i) => (
@@ -647,10 +647,10 @@ export default function Index() {
               ))}
 
               <div className="flex gap-3 pt-2 flex-wrap">
-                <a href="#" className="flex items-center gap-2 bg-[#111] border border-[#222] hover:border-[#C0152A]/40 text-white/60 hover:text-white px-4 py-2.5 transition-all font-golos text-sm">
-                  <Icon name="MessageCircle" size={16} className="text-[#C0152A]" /> WhatsApp
+                <a href="tel:+79507538353" className="flex items-center gap-2 bg-[#111] border border-[#222] hover:border-[#C0152A]/40 text-white/60 hover:text-white px-4 py-2.5 transition-all font-golos text-sm">
+                  <Icon name="Phone" size={16} className="text-[#C0152A]" /> Позвонить
                 </a>
-                <a href="#" className="flex items-center gap-2 bg-[#111] border border-[#222] hover:border-[#C0152A]/40 text-white/60 hover:text-white px-4 py-2.5 transition-all font-golos text-sm">
+                <a href="https://t.me/APTstudio136" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#111] border border-[#222] hover:border-[#C0152A]/40 text-white/60 hover:text-white px-4 py-2.5 transition-all font-golos text-sm">
                   <Icon name="Send" size={16} className="text-[#00D4FF]" /> Telegram
                 </a>
                 <a href="https://www.avito.ru/brands/b6354d8206e2bc2ec3455d3f914cad18/all?sellerId=eaf918690916e23f0a7b434eee904443" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#111] border border-[#222] hover:border-[#C0152A]/40 text-white/60 hover:text-white px-4 py-2.5 transition-all font-golos text-sm">
@@ -666,7 +666,7 @@ export default function Index() {
                 </div>
                 <div className="text-center">
                   <div className="font-oswald text-lg font-bold text-white">APT Studio</div>
-                  <div className="font-golos text-sm text-white/40">Воронеж</div>
+                  <div className="font-golos text-sm text-white/40">ул. Митрофановская, 2</div>
                 </div>
                 <a href="https://yandex.ru/maps/-/CPFbzL4G" target="_blank" rel="noopener noreferrer" className="bg-gradient-orange text-black font-oswald font-bold px-6 py-2.5 text-sm tracking-widest uppercase hover:scale-105 transition-transform mt-2 flex items-center gap-2">
                   ОТКРЫТЬ КАРТУ <Icon name="ExternalLink" size={14} />
