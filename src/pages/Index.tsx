@@ -44,9 +44,15 @@ const serviceCategories = [
   { id: "ppf", label: "Бронирование", icon: "Shield" },
   { id: "polishing", label: "Полировка", icon: "Zap" },
   { id: "audio", label: "Автозвук", icon: "Music" },
-  { id: "radio", label: "Магнитолы", icon: "Radio" },
   { id: "noise", label: "Шумоизоляция", icon: "Volume2" },
   { id: "tuning", label: "Тюнинг", icon: "Wrench" },
+];
+
+const productCategories = [
+  { id: "all", label: "Все товары", icon: "LayoutGrid" },
+  { id: "audio", label: "Автозвук", icon: "Music" },
+  { id: "radio", label: "Магнитолы", icon: "Radio" },
+  { id: "noise", label: "Шумоизоляция", icon: "Volume2" },
 ];
 
 const services = [
@@ -56,9 +62,9 @@ const services = [
   { cat: "detailing", icon: "Car", title: "Чистка кожи", desc: "Профессиональная чистка и обработка кожаных поверхностей салона.", price: "1 000 ₽", badge: null, color: "#C0152A" },
   { cat: "detailing", icon: "Wind", title: "Озонирование салона", desc: "Эффективный метод удаления неприятных запахов и дезинфекции салона.", price: "2 000 ₽", badge: null, color: "#C0152A" },
   { cat: "detailing", icon: "Droplets", title: "Мойка двигателя", desc: "Высококачественная мойка двигателя с использованием профессиональной химии.", price: "3 000 ₽", badge: null, color: "#C0152A" },
-  { cat: "detailing", icon: "Flashlight", title: "Восстановление фар", desc: "Глубокое восстановление фар — улучшение светопропускания и защита оптики.", price: "12 000 ₽", badge: null, color: "#C0152A" },
-  { cat: "detailing", icon: "Umbrella", title: "Антидождь на лобовое стекло", desc: "Водоотталкивающее покрытие для лобового стекла. Отличная видимость в дождь.", price: "2 000 ₽", badge: null, color: "#C0152A" },
-  { cat: "detailing", icon: "Eye", title: "Тонирование стёкол (детейлинг)", desc: "Эффективное решение для повышения комфорта и конфиденциальности.", price: "4 500 ₽", badge: null, color: "#C0152A" },
+  { cat: "detailing", icon: "Lightbulb", title: "Восстановление фар", desc: "Глубокое восстановление фар — улучшение светопропускания и защита оптики.", price: "12 000 ₽", badge: null, color: "#C0152A" },
+  { cat: "detailing", icon: "Droplet", title: "Антидождь на лобовое стекло", desc: "Водоотталкивающее покрытие для лобового стекла. Отличная видимость в дождь.", price: "2 000 ₽", badge: null, color: "#C0152A" },
+  { cat: "detailing", icon: "Eye", title: "Тонирование стёкол", desc: "Эффективное решение для повышения комфорта и конфиденциальности.", price: "4 500 ₽", badge: null, color: "#C0152A" },
   // ТОНИРОВКА
   { cat: "tinting", icon: "Sun", title: "Тонировка в круг", desc: "Полная тонировка всех стёкол автомобиля. Без снятия дверных карт.", price: "12 000 ₽", badge: "ХИТ", color: "#A855F7" },
   { cat: "tinting", icon: "Sun", title: "Тонировка заднего стекла", desc: "Тонировка заднего стекла. Гарантия качества.", price: "3 000 ₽", badge: null, color: "#A855F7" },
@@ -68,7 +74,7 @@ const services = [
   // БРОНИРОВАНИЕ ППФ
   { cat: "ppf", icon: "Shield", title: "Бронирование авто (полиуретан)", desc: "Защитная полиуретановая плёнка — надёжная защита от сколов и царапин.", price: "от 5 000 ₽", badge: null, color: "#00D4FF" },
   { cat: "ppf", icon: "Shield", title: "Бронирование капота", desc: "Защита капота от сколов и царапин. Сохраняет первозданный вид кузова.", price: "15 000 ₽", badge: "ХИТ", color: "#00D4FF" },
-  { cat: "ppf", icon: "Flashlight", title: "Полировка и бронирование фар", desc: "Защита оптики от механических повреждений и ультрафиолета.", price: "5 000 ₽", badge: null, color: "#00D4FF" },
+  { cat: "ppf", icon: "Lightbulb", title: "Полировка и бронирование фар", desc: "Защита оптики от механических повреждений и ультрафиолета.", price: "5 000 ₽", badge: null, color: "#00D4FF" },
   // ПОЛИРОВКА
   { cat: "polishing", icon: "Zap", title: "Полировка авто (для блеска)", desc: "Убирает мелкие и глубокие царапины. Восстановление зеркального блеска кузова.", price: "8 000 ₽", badge: null, color: "#FFD600" },
   { cat: "polishing", icon: "Sparkles", title: "Полировка + Керамика", desc: "Керамическое покрытие для защиты лака. Блеск и защита на годы вперёд.", price: "25 000 ₽", badge: "ХИТ", color: "#FFD600" },
@@ -77,18 +83,28 @@ const services = [
   { cat: "audio", icon: "Music", title: "Установка усилителя", desc: "Установка усилителя с прокладкой кабелей и настройкой.", price: "4 500 ₽", badge: null, color: "#22C55E" },
   { cat: "audio", icon: "Radio", title: "Установка андроид магнитолы", desc: "Установка всех типов магнитол в любой автомобиль, подключение камеры.", price: "2 500 ₽", badge: null, color: "#22C55E" },
   { cat: "audio", icon: "Music", title: "Установка автозвука", desc: "Комплексная установка автозвука: сабвуфер, усилитель, динамики, шумоизоляция.", price: "от 1 000 ₽", badge: null, color: "#22C55E" },
-  // АВТОЗВУК ТОВАРЫ — Сабвуферы
-  { cat: "audio", icon: "Disc", title: "Сабвуфер Ural", desc: "Новый с гарантией. Возможна установка в нашей студии.", price: "3 999 ₽", badge: null, color: "#22C55E" },
-  { cat: "audio", icon: "Disc", title: "Сабвуфер Edge", desc: "Новый с гарантией. Возможна установка в нашей студии.", price: "2 999 ₽", badge: null, color: "#22C55E" },
-  { cat: "audio", icon: "Disc", title: "Сабвуфер AMP", desc: "Новый с гарантией. Возможна установка в нашей студии.", price: "1 999 ₽", badge: null, color: "#22C55E" },
-  { cat: "audio", icon: "Disc", title: "Сабвуфер Aura", desc: "Новый с гарантией. Возможна установка в нашей студии.", price: "999 ₽", badge: null, color: "#22C55E" },
-  // Динамики
+  // ШУМОИЗОЛЯЦИЯ УСЛУГИ
+  { cat: "noise", icon: "Volume2", title: "Шумоизоляция пола авто", desc: "Комплексная шумоизоляция пола автомобиля.", price: "15 000 ₽", badge: null, color: "#8B5CF6" },
+  { cat: "noise", icon: "Volume2", title: "Шумоизоляция дверей авто", desc: "6-слойная шумоизоляция дверей. Материалы STP.", price: "12 000 ₽", badge: "ХИТ", color: "#8B5CF6" },
+  { cat: "noise", icon: "Volume2", title: "Шумоизоляция крыши / потолка", desc: "Шумоизоляция крыши для снижения шума дождя и дороги.", price: "8 000 ₽", badge: null, color: "#8B5CF6" },
+  // ТЮНИНГ
+  { cat: "tuning", icon: "Lightbulb", title: "Контурная подсветка AmbieLight", desc: "Установка подсветки в любой автомобиль с гарантией.", price: "12 000 ₽", badge: null, color: "#EC4899" },
+  { cat: "tuning", icon: "Lightbulb", title: "Контурная подсветка салона", desc: "Полная контурная подсветка салона автомобиля.", price: "15 000 ₽", badge: "НОВИНКА", color: "#EC4899" },
+];
+
+const products = [
+  // САБВУФЕРЫ
+  { cat: "audio", icon: "Disc3", title: "Сабвуфер Ural", desc: "Новый с гарантией. Возможна установка в нашей студии.", price: "3 999 ₽", badge: null, color: "#22C55E" },
+  { cat: "audio", icon: "Disc3", title: "Сабвуфер Edge", desc: "Новый с гарантией. Возможна установка в нашей студии.", price: "2 999 ₽", badge: null, color: "#22C55E" },
+  { cat: "audio", icon: "Disc3", title: "Сабвуфер AMP", desc: "Новый с гарантией. Возможна установка в нашей студии.", price: "1 999 ₽", badge: null, color: "#22C55E" },
+  { cat: "audio", icon: "Disc3", title: "Сабвуфер Aura", desc: "Новый с гарантией. Возможна установка в нашей студии.", price: "999 ₽", badge: null, color: "#22C55E" },
+  // ДИНАМИКИ
   { cat: "audio", icon: "Speaker", title: "Динамики Audio System", desc: "Новые с гарантией. Возможна установка в нашей студии.", price: "4 999 ₽", badge: null, color: "#22C55E" },
   { cat: "audio", icon: "Speaker", title: "Динамики Morel", desc: "Новые с гарантией. Возможна установка в нашей студии.", price: "3 999 ₽", badge: null, color: "#22C55E" },
   { cat: "audio", icon: "Speaker", title: "Динамики Ural", desc: "Новые с гарантией. Возможна установка в нашей студии.", price: "2 999 ₽", badge: null, color: "#22C55E" },
   { cat: "audio", icon: "Speaker", title: "Динамики Focal", desc: "Новые с гарантией. Возможна установка в нашей студии.", price: "1 999 ₽", badge: null, color: "#22C55E" },
   { cat: "audio", icon: "Speaker", title: "Динамики Aura", desc: "Новые с гарантией. Возможна установка в нашей студии.", price: "999 ₽", badge: null, color: "#22C55E" },
-  // Усилители
+  // УСИЛИТЕЛИ
   { cat: "audio", icon: "Zap", title: "Усилитель Aura", desc: "Новый с гарантией. Возможна установка в нашей студии.", price: "3 999 ₽", badge: null, color: "#22C55E" },
   { cat: "audio", icon: "Zap", title: "Усилитель Ural", desc: "Новый с гарантией. Возможна установка в нашей студии.", price: "2 999 ₽", badge: null, color: "#22C55E" },
   { cat: "audio", icon: "Zap", title: "Усилитель Edge", desc: "Новый с гарантией. Возможна установка в нашей студии.", price: "1 999 ₽", badge: null, color: "#22C55E" },
@@ -97,21 +113,14 @@ const services = [
   { cat: "radio", icon: "Radio", title: "Teyes CC4 Pro 8-128 (9\"-10\")", desc: "Топовая Android-магнитола. Новая с гарантией.", price: "50 000 ₽", badge: "ТОП", color: "#F59E0B" },
   { cat: "radio", icon: "Radio", title: "Teyes CC3 2K 4-64 (9\"-10\")", desc: "Android-магнитола с 2K экраном. Новая с гарантией.", price: "25 000 ₽", badge: null, color: "#F59E0B" },
   { cat: "radio", icon: "Radio", title: "Teyes CC3L 4-32 (9\"-10\")", desc: "Android-магнитола. Новая с гарантией.", price: "15 000 ₽", badge: null, color: "#F59E0B" },
+  { cat: "radio", icon: "Radio", title: "DUDU 3 9\" 4-64", desc: "Android-магнитола. Новая с гарантией.", price: "14 000 ₽", badge: null, color: "#F59E0B" },
   { cat: "radio", icon: "Radio", title: "BOS-mini Q8 6-64 (9\"-10\")", desc: "Android-магнитола. Новая с гарантией.", price: "10 000 ₽", badge: null, color: "#F59E0B" },
   { cat: "radio", icon: "Radio", title: "Aura AMV-1016L 10\"", desc: "Android-магнитола Aura. Новая с гарантией.", price: "9 000 ₽", badge: null, color: "#F59E0B" },
-  { cat: "radio", icon: "Radio", title: "DUDU 3 9\" 4-64", desc: "Android-магнитола DUDU. Новая с гарантией.", price: "14 000 ₽", badge: null, color: "#F59E0B" },
-  // ШУМОИЗОЛЯЦИЯ УСЛУГИ
-  { cat: "noise", icon: "Volume2", title: "Шумоизоляция пола авто", desc: "Комплексная шумоизоляция пола автомобиля.", price: "15 000 ₽", badge: null, color: "#8B5CF6" },
-  { cat: "noise", icon: "Volume2", title: "Шумоизоляция дверей авто", desc: "6-слойная шумоизоляция дверей. Материалы STP.", price: "12 000 ₽", badge: "ХИТ", color: "#8B5CF6" },
-  { cat: "noise", icon: "Volume2", title: "Шумоизоляция крыши / потолка", desc: "Шумоизоляция крыши для снижения шума дождя и дороги.", price: "8 000 ₽", badge: null, color: "#8B5CF6" },
-  // ШУМОИЗОЛЯЦИЯ ТОВАРЫ
-  { cat: "noise", icon: "Package", title: "Шумоизоляция STP Aura Comfort", desc: "Новые комплектующие с гарантией. Возможна установка в нашей студии.", price: "999 ₽", badge: null, color: "#8B5CF6" },
+  // ШУМО/ВИБРО ИЗОЛЯЦИЯ
   { cat: "noise", icon: "Package", title: "Виброизоляция STP Legend", desc: "Новые комплектующие с гарантией. Возможна установка в нашей студии.", price: "2 999 ₽", badge: null, color: "#8B5CF6" },
   { cat: "noise", icon: "Package", title: "Виброизоляция Comfort", desc: "Новые комплектующие с гарантией. Возможна установка в нашей студии.", price: "1 999 ₽", badge: null, color: "#8B5CF6" },
   { cat: "noise", icon: "Package", title: "Виброизоляция Aura", desc: "Новые комплектующие с гарантией. Возможна установка в нашей студии.", price: "999 ₽", badge: null, color: "#8B5CF6" },
-  // ТЮНИНГ
-  { cat: "tuning", icon: "Lightbulb", title: "Контурная подсветка AmbieLight", desc: "Установка подсветки в любой автомобиль с гарантией.", price: "12 000 ₽", badge: null, color: "#EC4899" },
-  { cat: "tuning", icon: "Lightbulb", title: "Контурная подсветка салона", desc: "Полная контурная подсветка салона автомобиля.", price: "15 000 ₽", badge: "НОВИНКА", color: "#EC4899" },
+  { cat: "noise", icon: "Package", title: "Шумоизоляция STP Aura Comfort", desc: "Новые комплектующие с гарантией. Возможна установка в нашей студии.", price: "999 ₽", badge: null, color: "#8B5CF6" },
 ];
 
 const portfolio = [
@@ -196,6 +205,8 @@ export default function Index() {
   const [formData, setFormData] = useState({ name: "", phone: "", service: "", date: "" });
   const [formSent, setFormSent] = useState(false);
   const [activeCategory, setActiveCategory] = useState("all");
+  const [activeTab, setActiveTab] = useState<"services" | "products">("services");
+  const [activeProductCategory, setActiveProductCategory] = useState("all");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -325,70 +336,137 @@ export default function Index() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* SERVICES & PRODUCTS */}
       <section id="services" className="py-24 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-[#0D0D0D] to-[#0A0A0A]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="section-reveal mb-10 text-center">
-            <span className="font-oswald text-sm tracking-[0.3em] text-[#C0152A] uppercase">Что мы делаем</span>
+            <span className="font-oswald text-sm tracking-[0.3em] text-[#C0152A] uppercase">Что мы предлагаем</span>
             <h2 className="font-oswald text-4xl md:text-6xl font-bold mt-2">
-              НАШИ <span className="text-gradient-orange">УСЛУГИ</span>
+              УСЛУГИ <span className="text-gradient-orange">&amp; ТОВАРЫ</span>
             </h2>
             <div className="w-16 h-1 bg-gradient-orange mx-auto mt-4" />
           </div>
 
-          {/* Category filter */}
-          <div className="section-reveal mb-8 flex flex-wrap gap-2 justify-center">
-            {serviceCategories.map((cat) => (
+          {/* Main tabs */}
+          <div className="section-reveal mb-8 flex justify-center">
+            <div className="inline-flex border border-[#222] p-1 gap-1">
               <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`flex items-center gap-1.5 px-4 py-2 font-oswald text-xs tracking-widest uppercase transition-all border ${
-                  activeCategory === cat.id
-                    ? "bg-gradient-orange text-white border-transparent"
-                    : "bg-transparent text-white/50 border-[#222] hover:border-[#C0152A]/50 hover:text-white"
+                onClick={() => { setActiveTab("services"); setActiveCategory("all"); }}
+                className={`flex items-center gap-2 px-6 py-2.5 font-oswald text-sm tracking-widest uppercase transition-all ${
+                  activeTab === "services" ? "bg-gradient-orange text-white" : "text-white/50 hover:text-white"
                 }`}
               >
-                <Icon name={cat.icon} size={13} />
-                {cat.label}
+                <Icon name="Wrench" size={15} /> Услуги
+                <span className="font-golos text-xs opacity-60 normal-case tracking-normal ml-1">({services.length})</span>
               </button>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {services.filter(s => activeCategory === "all" || s.cat === activeCategory).map((s, i) => (
-              <div
-                key={i}
-                className="card-hover bg-[#111] border border-[#222] p-5 relative overflow-hidden group animate-fade-in"
+              <button
+                onClick={() => { setActiveTab("products"); setActiveProductCategory("all"); }}
+                className={`flex items-center gap-2 px-6 py-2.5 font-oswald text-sm tracking-widest uppercase transition-all ${
+                  activeTab === "products" ? "bg-gradient-orange text-white" : "text-white/50 hover:text-white"
+                }`}
               >
-                {s.badge && (
-                  <span className="absolute top-3 right-3 bg-gradient-orange text-white font-oswald font-bold text-xs px-2 py-0.5 tracking-widest">
-                    {s.badge}
-                  </span>
-                )}
-                <div className="w-10 h-10 rounded flex items-center justify-center mb-3" style={{ backgroundColor: `${s.color}15`, border: `1px solid ${s.color}30` }}>
-                  <Icon name={s.icon} size={18} style={{ color: s.color }} fallback="Wrench" />
-                </div>
-                <h3 className="font-oswald text-base font-bold mb-1.5 text-white group-hover:text-[#C0152A] transition-colors leading-tight">
-                  {s.title}
-                </h3>
-                <p className="font-golos text-xs text-white/45 leading-relaxed mb-3">{s.desc}</p>
-                <div className="flex items-center justify-between pt-3 border-t border-[#222]">
-                  <span className="font-oswald text-base font-bold" style={{ color: s.color }}>{s.price}</span>
-                  <a href="#booking" className="font-oswald text-xs tracking-widest text-white/30 hover:text-[#C0152A] transition-colors uppercase flex items-center gap-1">
-                    ЗАПИСАТЬСЯ <Icon name="ArrowRight" size={12} />
-                  </a>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ backgroundColor: s.color }} />
-              </div>
-            ))}
+                <Icon name="ShoppingBag" size={15} /> Товары
+                <span className="font-golos text-xs opacity-60 normal-case tracking-normal ml-1">({products.length})</span>
+              </button>
+            </div>
           </div>
 
-          <div className="section-reveal mt-6 text-center">
-            <span className="font-golos text-sm text-white/30">
-              Показано: {services.filter(s => activeCategory === "all" || s.cat === activeCategory).length} из {services.length} позиций
-            </span>
-          </div>
+          {/* Services tab */}
+          {activeTab === "services" && (
+            <>
+              <div className="mb-6 flex flex-wrap gap-2 justify-center">
+                {serviceCategories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveCategory(cat.id)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 font-oswald text-xs tracking-widest uppercase transition-all border ${
+                      activeCategory === cat.id
+                        ? "bg-gradient-orange text-white border-transparent"
+                        : "bg-transparent text-white/50 border-[#222] hover:border-[#C0152A]/50 hover:text-white"
+                    }`}
+                  >
+                    <Icon name={cat.icon} size={12} fallback="Wrench" />
+                    {cat.label}
+                  </button>
+                ))}
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {services.filter(s => activeCategory === "all" || s.cat === activeCategory).map((s, i) => (
+                  <div key={i} className="card-hover bg-[#111] border border-[#222] p-5 relative overflow-hidden group animate-fade-in">
+                    {s.badge && (
+                      <span className="absolute top-3 right-3 bg-gradient-orange text-white font-oswald font-bold text-xs px-2 py-0.5 tracking-widest">{s.badge}</span>
+                    )}
+                    <div className="w-10 h-10 rounded flex items-center justify-center mb-3" style={{ backgroundColor: `${s.color}15`, border: `1px solid ${s.color}30` }}>
+                      <Icon name={s.icon} size={18} style={{ color: s.color }} fallback="Wrench" />
+                    </div>
+                    <h3 className="font-oswald text-base font-bold mb-1.5 text-white group-hover:text-[#C0152A] transition-colors leading-tight">{s.title}</h3>
+                    <p className="font-golos text-xs text-white/45 leading-relaxed mb-3">{s.desc}</p>
+                    <div className="flex items-center justify-between pt-3 border-t border-[#222]">
+                      <span className="font-oswald text-base font-bold" style={{ color: s.color }}>{s.price}</span>
+                      <a href="#booking" className="font-oswald text-xs tracking-widest text-white/30 hover:text-[#C0152A] transition-colors uppercase flex items-center gap-1">
+                        ЗАПИСАТЬСЯ <Icon name="ArrowRight" size={12} />
+                      </a>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ backgroundColor: s.color }} />
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 text-center">
+                <span className="font-golos text-xs text-white/25">
+                  {services.filter(s => activeCategory === "all" || s.cat === activeCategory).length} из {services.length} услуг
+                </span>
+              </div>
+            </>
+          )}
+
+          {/* Products tab */}
+          {activeTab === "products" && (
+            <>
+              <div className="mb-6 flex flex-wrap gap-2 justify-center">
+                {productCategories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveProductCategory(cat.id)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 font-oswald text-xs tracking-widest uppercase transition-all border ${
+                      activeProductCategory === cat.id
+                        ? "bg-gradient-orange text-white border-transparent"
+                        : "bg-transparent text-white/50 border-[#222] hover:border-[#C0152A]/50 hover:text-white"
+                    }`}
+                  >
+                    <Icon name={cat.icon} size={12} fallback="Package" />
+                    {cat.label}
+                  </button>
+                ))}
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {products.filter(p => activeProductCategory === "all" || p.cat === activeProductCategory).map((p, i) => (
+                  <div key={i} className="card-hover bg-[#111] border border-[#222] p-4 relative overflow-hidden group animate-fade-in">
+                    {p.badge && (
+                      <span className="absolute top-3 right-3 bg-gradient-orange text-white font-oswald font-bold text-xs px-2 py-0.5 tracking-widest">{p.badge}</span>
+                    )}
+                    <div className="w-9 h-9 rounded flex items-center justify-center mb-3" style={{ backgroundColor: `${p.color}15`, border: `1px solid ${p.color}30` }}>
+                      <Icon name={p.icon} size={16} style={{ color: p.color }} fallback="Package" />
+                    </div>
+                    <h3 className="font-oswald text-sm font-bold mb-1 text-white group-hover:text-[#C0152A] transition-colors leading-tight">{p.title}</h3>
+                    <p className="font-golos text-xs text-white/40 leading-relaxed mb-3">{p.desc}</p>
+                    <div className="flex items-center justify-between pt-2.5 border-t border-[#222]">
+                      <span className="font-oswald text-sm font-bold" style={{ color: p.color }}>{p.price}</span>
+                      <a href="#booking" className="font-oswald text-xs text-white/30 hover:text-[#C0152A] transition-colors uppercase flex items-center gap-0.5">
+                        КУПИТЬ <Icon name="ArrowRight" size={11} />
+                      </a>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ backgroundColor: p.color }} />
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 text-center">
+                <span className="font-golos text-xs text-white/25">
+                  {products.filter(p => activeProductCategory === "all" || p.cat === activeProductCategory).length} из {products.length} товаров
+                </span>
+              </div>
+            </>
+          )}
         </div>
       </section>
 
