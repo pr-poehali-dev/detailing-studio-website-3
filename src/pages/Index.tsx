@@ -124,12 +124,12 @@ const products = [
 ];
 
 const portfolio = [
-  { title: "BMW 5 Series", desc: "Нанокерамика + полировка", img: CERAMIC_IMG },
-  { title: "Mercedes GLE", desc: "ППФ полный капот + крылья", img: HERO_IMG },
-  { title: "Toyota Camry", desc: "Полная полировка кузова", img: BEFORE_AFTER_IMG },
-  { title: "Audi Q7", desc: "Комплекс: керамика + тонировка", img: CERAMIC_IMG },
-  { title: "Porsche Cayenne", desc: "Детейлинг + защитное покрытие", img: HERO_IMG },
-  { title: "Kia Sportage", desc: "Полировка + химчистка салона", img: BEFORE_AFTER_IMG },
+  { title: "BMW 5 Series", desc: "PPF капот + тонировка в круг", img: CERAMIC_IMG },
+  { title: "Mercedes GLE", desc: "Антигравийная плёнка + автовинил", img: HERO_IMG },
+  { title: "Toyota Camry", desc: "Тонировка хамелеон лобовое", img: BEFORE_AFTER_IMG },
+  { title: "Audi Q7", desc: "PPF полный кузов", img: CERAMIC_IMG },
+  { title: "Porsche Cayenne", desc: "Автовинил + тонировка передней полусферы", img: HERO_IMG },
+  { title: "Kia Sportage", desc: "Антигравий + тонировка боковых стёкол", img: BEFORE_AFTER_IMG },
 ];
 
 const reviews = [
@@ -295,15 +295,15 @@ export default function Index() {
             </div>
 
             <h1 className="font-oswald text-5xl sm:text-7xl lg:text-8xl font-bold leading-none mb-4 animate-slide-left" style={{ animationDelay: "0.1s" }}>
-              <span className="text-white">ЗАЩИТА</span>
+              <span className="text-white">ТОНИРОВКА</span>
               <br />
-              <span className="text-gradient-orange">КОТОРАЯ</span>
+              <span className="text-gradient-orange">PPF · АНТИГРАВИЙ</span>
               <br />
-              <span className="text-white">ДЛИТСЯ ГОДАМИ</span>
+              <span className="text-white">АВТОВИНИЛ</span>
             </h1>
 
             <p className="font-golos text-lg text-white/60 max-w-xl mb-8 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              Профессиональный детейлинг, нанокерамика, PPF и тонировка. APT Studio — ваш автомобиль в идеальном состоянии.
+              Профессиональная защита автомобиля плёнками PPF, антигравийным покрытием и автовинилом. Тонировка стёкол всех видов. APT Studio — Воронеж.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
@@ -485,18 +485,18 @@ export default function Index() {
                 О <span className="text-gradient-orange">СТУДИИ</span>
               </h2>
               <p className="font-golos text-white/60 leading-relaxed mb-4">
-                APT Studio — детейлинг-студия в Воронеже, специализирующаяся на профессиональной защите автомобилей. Мы работаем с лучшими материалами и технологиями рынка.
+                APT Studio — студия тонировки и защиты автомобилей в Воронеже. Специализируемся на оклейке защитными плёнками PPF, антигравийными покрытиями, автовинилом и тонировке стёкол.
               </p>
               <p className="font-golos text-white/60 leading-relaxed mb-8">
-                Наше главное направление — <span className="text-[#C0152A] font-medium">нанокерамическое покрытие</span>, обеспечивающее долгосрочную защиту лака и неповторимый блеск. Каждый автомобиль получает индивидуальный подход.
+                Наши главные направления — <span className="text-[#C0152A] font-medium">тонировка стёкол</span> и <span className="text-[#C0152A] font-medium">защита кузова плёнками PPF</span>. Работаем без снятия дверных карт. Гарантия на все работы. Каждый автомобиль — индивидуальный подход.
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
-                  { icon: "Award", text: "Сертифицированные мастера" },
-                  { icon: "Clock", text: "Ответ за 30 минут" },
-                  { icon: "CheckCircle", text: "Гарантия на работы" },
-                  { icon: "Star", text: "Рейтинг 4.8 на Avito" },
+                  { icon: "Shield", text: "PPF, антигравий, автовинил" },
+                  { icon: "Sun", text: "Тонировка без снятия карт" },
+                  { icon: "CheckCircle", text: "Гарантия на все работы" },
+                  { icon: "Star", text: "Рейтинг 5.0 на Avito" },
                 ].map((f, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-[#C0152A]/10 rounded flex items-center justify-center shrink-0">
