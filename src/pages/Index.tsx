@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMG = "https://cdn.poehali.dev/projects/ebe0fc45-fc3b-4837-9232-70a2386267ac/files/34f95e67-11ca-4f7a-b40f-cac945acd327.jpg";
-const CERAMIC_IMG = "https://cdn.poehali.dev/projects/ebe0fc45-fc3b-4837-9232-70a2386267ac/files/88701d4a-38a2-4e14-8948-646d49456f47.jpg";
-const BEFORE_AFTER_IMG = "https://cdn.poehali.dev/projects/ebe0fc45-fc3b-4837-9232-70a2386267ac/files/478d8866-577d-49ef-8aa7-ff7dfc688598.jpg";
+const HERO_IMG = "https://cdn.poehali.dev/projects/ebe0fc45-fc3b-4837-9232-70a2386267ac/bucket/a02557d4-72db-4333-b806-aeefae8362d2.jpeg";
+const CERAMIC_IMG = "https://cdn.poehali.dev/projects/ebe0fc45-fc3b-4837-9232-70a2386267ac/bucket/1f15ceab-33d8-4f49-ba84-227fade35951.jpeg";
+const BEFORE_AFTER_IMG = "https://cdn.poehali.dev/projects/ebe0fc45-fc3b-4837-9232-70a2386267ac/bucket/41bdcae7-fd1c-4fd3-b4d8-a60d39e89646.jpeg";
+const BMW_IMG = "https://cdn.poehali.dev/projects/ebe0fc45-fc3b-4837-9232-70a2386267ac/bucket/98e2a52b-5e13-4bcd-900b-2e6746f04369.jpeg";
+const HEADLIGHTS_IMG = "https://cdn.poehali.dev/projects/ebe0fc45-fc3b-4837-9232-70a2386267ac/bucket/fd5080bd-8bf4-4859-8eac-0966122bb5a7.jpeg";
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -124,12 +126,12 @@ const products = [
 ];
 
 const portfolio = [
-  { title: "BMW 5 Series", desc: "PPF капот + тонировка в круг", img: CERAMIC_IMG },
-  { title: "Mercedes GLE", desc: "Антигравийная плёнка + автовинил", img: HERO_IMG },
-  { title: "Toyota Camry", desc: "Тонировка хамелеон лобовое", img: BEFORE_AFTER_IMG },
-  { title: "Audi Q7", desc: "PPF полный кузов", img: CERAMIC_IMG },
-  { title: "Porsche Cayenne", desc: "Автовинил + тонировка передней полусферы", img: HERO_IMG },
-  { title: "Kia Sportage", desc: "Антигравий + тонировка боковых стёкол", img: BEFORE_AFTER_IMG },
+  { title: "BMW 3 Series", desc: "Автовинил матовый чёрный", img: HERO_IMG },
+  { title: "Контурная подсветка", desc: "Opel Astra — AmbieLight красная", img: CERAMIC_IMG },
+  { title: "BMW + Skoda", desc: "Автовинил матовый серый", img: BEFORE_AFTER_IMG },
+  { title: "BMW 3 Series", desc: "Тонировка лобового хамелеон", img: BMW_IMG },
+  { title: "Восстановление фар", desc: "До и после — VW Passat", img: HEADLIGHTS_IMG },
+  { title: "APT Studio", desc: "Наша студия в Воронеже", img: HERO_IMG },
 ];
 
 const reviews = [
