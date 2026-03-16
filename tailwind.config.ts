@@ -49,7 +49,7 @@ export default {
 					foreground: 'hsl(var(--accent-foreground))'
 				},
 				neon: {
-					orange: '#FF6B1A',
+					orange: '#C0152A',
 					yellow: '#FFD600',
 					blue: '#00D4FF',
 				},

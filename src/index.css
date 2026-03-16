@@ -13,8 +13,8 @@
     --popover: 0 0% 7%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 24 100% 54%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 0 85% 45%;
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 0 0% 11%;
     --secondary-foreground: 0 0% 98%;
@@ -22,8 +22,8 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 24 100% 54%;
-    --accent-foreground: 0 0% 4%;
+    --accent: 0 85% 45%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -54,7 +54,7 @@
 
 @layer utilities {
   .text-gradient-orange {
-    background: linear-gradient(135deg, #ff6b1a 0%, #ffd600 100%);
+    background: linear-gradient(135deg, #c0152a 0%, #6b0010 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -68,7 +68,7 @@
   }
 
   .bg-gradient-orange {
-    background: linear-gradient(135deg, #ff6b1a 0%, #ff9a00 100%);
+    background: linear-gradient(135deg, #c0152a 0%, #8b0000 100%);
   }
 
   .bg-noise {
@@ -77,19 +77,19 @@
 
   .glow-orange {
     box-shadow:
-      0 0 30px rgba(255, 107, 26, 0.4),
-      0 0 60px rgba(255, 107, 26, 0.2);
+      0 0 30px rgba(192, 21, 42, 0.5),
+      0 0 60px rgba(139, 0, 0, 0.3);
   }
 
   .glow-orange-text {
-    text-shadow: 0 0 30px rgba(255, 107, 26, 0.5);
+    text-shadow: 0 0 30px rgba(192, 21, 42, 0.6);
   }
 
   .border-gradient {
     border: 1px solid transparent;
     background:
       linear-gradient(#111, #111) padding-box,
-      linear-gradient(135deg, #ff6b1a, #ffd600) border-box;
+      linear-gradient(135deg, #c0152a, #6b0010) border-box;
   }
 
   .card-hover {
@@ -98,14 +98,14 @@
 
   .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(255, 107, 26, 0.15);
+    box-shadow: 0 20px 60px rgba(192, 21, 42, 0.2);
   }
 
   .shimmer-bg {
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(255, 107, 26, 0.1) 50%,
+      rgba(192, 21, 42, 0.1) 50%,
       transparent 100%
     );
     background-size: 200% 100%;
