@@ -295,15 +295,15 @@ export default function Index() {
             </div>
 
             <h1 className="font-oswald text-5xl sm:text-7xl lg:text-8xl font-bold leading-none mb-4 animate-slide-left" style={{ animationDelay: "0.1s" }}>
-              <span className="text-white">ТОНИРОВКА</span>
+              <span className="text-white">ВСЁ ДЛЯ</span>
               <br />
-              <span className="text-gradient-orange">PPF · АНТИГРАВИЙ</span>
+              <span className="text-gradient-orange">ВАШЕГО</span>
               <br />
-              <span className="text-white">АВТОВИНИЛ</span>
+              <span className="text-white">АВТОМОБИЛЯ</span>
             </h1>
 
             <p className="font-golos text-lg text-white/60 max-w-xl mb-8 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              Профессиональная защита автомобиля плёнками PPF, антигравийным покрытием и автовинилом. Тонировка стёкол всех видов. APT Studio — Воронеж.
+              Тонировка, PPF, автовинил, детейлинг, автозвук, шумоизоляция и тюнинг. APT Studio — полный спектр услуг для вашего авто в Воронеже.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
@@ -485,16 +485,16 @@ export default function Index() {
                 О <span className="text-gradient-orange">СТУДИИ</span>
               </h2>
               <p className="font-golos text-white/60 leading-relaxed mb-4">
-                APT Studio — студия тонировки и защиты автомобилей в Воронеже. Специализируемся на оклейке защитными плёнками PPF, антигравийными покрытиями, автовинилом и тонировке стёкол.
+                APT Studio — многопрофильная студия по обслуживанию автомобилей в Воронеже. Мы предлагаем полный спектр услуг: от тонировки и PPF до автозвука, шумоизоляции и тюнинга.
               </p>
               <p className="font-golos text-white/60 leading-relaxed mb-8">
-                Наши главные направления — <span className="text-[#C0152A] font-medium">тонировка стёкол</span> и <span className="text-[#C0152A] font-medium">защита кузова плёнками PPF</span>. Работаем без снятия дверных карт. Гарантия на все работы. Каждый автомобиль — индивидуальный подход.
+                Работаем с каждым клиентом индивидуально — подбираем оптимальное решение под задачу и бюджет. <span className="text-[#C0152A] font-medium">Гарантия на все виды работ</span>. Профессиональное оборудование, сертифицированные мастера, ответ в течение 30 минут.
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
-                  { icon: "Shield", text: "PPF, антигравий, автовинил" },
-                  { icon: "Sun", text: "Тонировка без снятия карт" },
+                  { icon: "Layers", text: "Полный спектр авто-услуг" },
+                  { icon: "Users", text: "Индивидуальный подход" },
                   { icon: "CheckCircle", text: "Гарантия на все работы" },
                   { icon: "Star", text: "Рейтинг 5.0 на Avito" },
                 ].map((f, i) => (
