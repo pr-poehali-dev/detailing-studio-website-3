@@ -253,7 +253,7 @@ export default function Index() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-[#FF6B1A]/10 border border-[#FF6B1A]/30 px-4 py-1.5 mb-6 animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-[#FF6B1A] animate-pulse" />
-              <span className="font-golos text-sm text-[#FF6B1A] tracking-widest uppercase">Воронеж · Рейтинг 4.8 ★ · 26+ отзывов</span>
+              <span className="font-golos text-sm text-[#FF6B1A] tracking-widest uppercase">Воронеж · Рейтинг 5.0 ★ · 97+ отзывов</span>
             </div>
 
             <h1 className="font-oswald text-5xl sm:text-7xl lg:text-8xl font-bold leading-none mb-4 animate-slide-left" style={{ animationDelay: "0.1s" }}>
@@ -283,9 +283,9 @@ export default function Index() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { val: 500, suf: "+", label: "АВТО В РАБОТЕ" },
-              { val: 4, suf: ".8★", label: "РЕЙТИНГ" },
+              { val: 5, suf: ".0★", label: "РЕЙТИНГ" },
               { val: 5, suf: " ЛЕТ", label: "ОПЫТ" },
-              { val: 26, suf: "+", label: "ОТЗЫВОВ" },
+              { val: 97, suf: "+", label: "ОТЗЫВОВ" },
             ].map((s, i) => (
               <div key={i} className="text-center">
                 <div className="font-oswald text-2xl md:text-3xl font-bold text-gradient-orange">
@@ -392,7 +392,7 @@ export default function Index() {
                   <div className="font-golos text-sm text-white/50 mt-1">Средний рейтинг</div>
                 </div>
                 <div className="absolute -top-4 -right-4 bg-[#FF6B1A] p-4">
-                  <div className="font-oswald text-2xl font-bold text-black">26+</div>
+                  <div className="font-oswald text-2xl font-bold text-black">97+</div>
                   <div className="font-golos text-xs text-black/70">ОТЗЫВОВ</div>
                 </div>
               </div>
@@ -448,8 +448,8 @@ export default function Index() {
               {[1,2,3,4,5].map(i => (
                 <Icon key={i} name="Star" size={20} className="text-[#FFD600]" />
               ))}
-              <span className="font-oswald text-xl font-bold text-white ml-2">4.8</span>
-              <span className="font-golos text-white/40 ml-1">/ 26 отзывов</span>
+              <span className="font-oswald text-xl font-bold text-white ml-2">5.0</span>
+              <span className="font-golos text-white/40 ml-1">/ 97 отзывов</span>
             </div>
           </div>
 
@@ -632,7 +632,7 @@ export default function Index() {
                 { icon: "MapPin", label: "АДРЕС", value: "Воронеж", sub: "Уточните адрес при записи" },
                 { icon: "Phone", label: "ТЕЛЕФОН", value: "Уточнить при записи", sub: "Ответим за 30 минут" },
                 { icon: "Clock", label: "РЕЖИМ РАБОТЫ", value: "Пн–Вс: 9:00 – 21:00", sub: "Без выходных" },
-                { icon: "Star", label: "МЫ НА AVITO", value: "APT studio", sub: "26 отзывов · Рейтинг 4.8★" },
+                { icon: "Star", label: "МЫ НА AVITO", value: "APT studio", sub: "97 отзывов · Рейтинг 5.0★" },
               ].map((c, i) => (
                 <div key={i} className="flex items-start gap-4 bg-[#111] border border-[#222] p-4 hover:border-[#FF6B1A]/30 transition-colors">
                   <div className="w-10 h-10 bg-[#FF6B1A]/10 flex items-center justify-center shrink-0">
